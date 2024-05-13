@@ -45,16 +45,16 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    // Convertir valor a minusculas y mostrarlo con la primera letra mayuscula
-    public function setNombreAttribute($valor)
-    {
-        $this->attributes['nombre'] = ucwords(strtolower($valor)); // Use ucwords for uppercase conversion
-    }
+    // // Convertir valor a minusculas y mostrarlo con la primera letra mayuscula
+    // public function setNombreAttribute($valor)
+    // {
+    //     $this->attributes['nombre'] = ucwords(strtolower($valor)); // Use ucwords for uppercase conversion
+    // }
 
-    public function getNombreAttribute($valor)
-    {
-        return ucfirst($valor);
-    }
+    // public function getNombreAttribute($valor)
+    // {
+    //     return ucfirst($valor);
+    // }
 
     // Relacion uno a muchos
     public function bienes_inmuebles()
