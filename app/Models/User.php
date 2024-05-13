@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -43,18 +45,32 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    // Convertir valor a minusculas y mostrarlo con la primera letra mayuscula
+    public function setNombreAttribute($valor)
+    {
+        $this->attributes['nombre'] = ucwords(strtolower($valor)); // Use ucwords for uppercase conversion
+    }
+
+    public function getNombreAttribute($valor)
+    {
+        return ucfirst($valor);
+    }
+
     // Relacion uno a muchos
-    public function bienes_inmuebles(){
+    public function bienes_inmuebles()
+    {
         return $this->hasMany('App\Models\Bienes_inmueble');
     }
 
     // Relacion uno a muchos
-    public function biens(){
+    public function biens()
+    {
         return $this->hasMany('App\Models\Bien');
     }
 
     // Relacion uno a muchos
-    public function minisplit_mural_mantenimientos(){
+    public function minisplit_mural_mantenimientos()
+    {
         return $this->hasMany('App\Models\Minisplit_mural_mantenimiento');
     }
 }

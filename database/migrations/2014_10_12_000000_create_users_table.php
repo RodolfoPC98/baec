@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('usuario', 45)->unique();
-            $table->string('nombre', 45);
+            $table->string('name', 45);
             $table->string('apellidos', 45);
             $table->tinyInteger('estado', 1);
-            $table->string('correo')->nullable();
+            $table->string('email')->nullable();
             $table->float('telefono')->nullable();
             $table->string('avatar', 45)->nullable();
             $table->string('tipo_usuario', 1);
