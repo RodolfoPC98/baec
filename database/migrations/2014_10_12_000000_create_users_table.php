@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('usuario', 45)->unique();
             $table->string('name', 45);
             $table->string('apellidos', 45);
-            $table->tinyInteger('estado', 1);
+            $table->tinyInteger('estado');
             $table->string('email')->nullable();
             $table->float('telefono')->nullable();
             $table->string('avatar', 45)->nullable();
