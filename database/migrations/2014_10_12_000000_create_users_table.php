@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('apellidos', 45);
             $table->tinyInteger('estado');
             $table->string('email')->nullable();
-            $table->float('telefono')->nullable();
+            $table->double('telefono')->nullable();
             $table->string('avatar', 45)->nullable();
-            $table->string('tipo_usuario', 1);
+            $table->string('tipo_usuario', 15);
             $table->string('password');
             $table->rememberToken()->nullable();
             $table->timestamps();

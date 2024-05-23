@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsuarioController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +19,10 @@ use App\Http\Controllers\UsuarioController;
 Route::get('/', LoginController::class);
 
 Route::controller(UsuarioController::class)->group(function () {
-    Route::get('usuarios', 'index');
-    Route::get('usuarios/create', 'create');
-    Route::get('usuarios/{usuario}', 'show');
+    Route::get('usuarios', 'index')->name('index');
+    Route::get('usuarios/create', 'create')->name('create');
+    Route::post('usuarios/', 'store')->name('store');
+    Route::get('usuarios/{usuario}', 'show')->name('usuario');
 });
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

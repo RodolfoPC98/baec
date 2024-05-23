@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('colonia', 45);
             $table->string('localidad', 45);
             $table->string('entidad_federativa', 45);
-            $table->float('telefono');
+            $table->double('telefono');
             $table->string('predio', 45);
             $table->string('edificio', 45);
             $table->string('unidad_administrativa', 45);
-            $table->float('monto_historico');
+            $table->double('monto_historico');
             
             $table->unsignedBigInteger('user_id')->nullable();
 
