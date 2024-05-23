@@ -3,6 +3,7 @@
 @section('title', 'Crear Usuario')
 
 @section('content')
+    <h1>{{route('usarios.store')}}</h1>
     <article class="panel is-danger">
         <p class="panel-heading">Registro de usuario</p>
         <br>
