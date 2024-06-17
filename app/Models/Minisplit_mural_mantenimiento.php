@@ -9,28 +9,30 @@ class Minisplit_mural_mantenimiento extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     // Relacion uno a muchos (inversa)
-    public function biens(){
-        return $this->belongsTo('App\Models\Bien');
+    public function bien(){
+        return $this->belongsTo(bien::class);
     }
 
     // Relacion uno a muchos (inversa)
-    public function users(){
-        return $this->belongsTo('App\Models\User');
+    public function user(){
+        return $this->belongsTo(user::class);
     }
 
     // Relacion uno a muchos (inversa)
-    public function trabajos_realizados(){
-        return $this->belongsTo('App\Models\Trabajos_realizados');
+    public function trabajos_realizado(){
+        return $this->belongsTo(trabajos_realizado::class);
     }
 
     // Relacion uno a muchos
-    public function cambios_piezas(){
-        return $this->hasMany('App\Models\Cambios_pieza');
+    public function cambios_pieza(){
+        return $this->hasMany(cambios_pieza::class);
     }
 
     // Relacion uno a muchos
-    public function img_mantenimientos(){
-        return $this->hasMany('App\Models\Img_mantenimiento');
+    public function img_mantenimiento(){
+        return $this->hasMany(img_mantenimiento::class);
     }
 }

@@ -9,13 +9,10 @@ class Modelo extends Model
 {
     use HasFactory;
 
-    // Relacion uno a muchos (inversa)
-    public function marca(){
-        return $this->belongsTo('App\Models\Marca');
-    }
+    protected $guarded = [];
 
     // Relacion uno a muchos
-    public function biens(){
-        return $this->hasMany('App\Models\Bien');
+    public function bien(){
+        return $this->hasMany(bien::class);
     }
 }

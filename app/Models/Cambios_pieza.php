@@ -9,13 +9,15 @@ class Cambios_pieza extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     // Relacion uno a muchos (inversa)
-    public function piezas_minisplit_murals(){
-        return $this->belongsTo('App\Models\Piezas_minisplit_mural');
+    public function piezas_minisplit_mural(){
+        return $this->belongsTo(piezas_minisplit_mural::class);
     }
 
     // Relacion uno a muchos (inversa)
-    public function minisplit_mural_mantenimientos(){
-        return $this->belongsTo('App\Models\Minisplit_mural_mantenimiento');
+    public function minisplit_mural_mantenimiento(){
+        return $this->belongsTo(minisplit_mural_mantenimiento::class);
     }
 }

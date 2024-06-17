@@ -3,82 +3,59 @@
 @section('title', 'Crear Usuario')
 
 @section('content')
-    <h1>{{route('usarios.store')}}</h1>
-    <article class="panel is-danger">
-        <p class="panel-heading">Registro de usuario</p>
-        <br>
-        <div class="columns is-mobile is-centered is-three-fifths">
-            <div class="field">
-                <label class="label">Usuario</label>
-                <div class="control">
-                    <input name="user" class="input" type="text" placeholder="Ingrese su usuario...">
+
+
+    <div class="container mt-5 bg-body-secondary p-4 text-center">
+        <h2 class="p-4">Registro de Usuario</h2>
+
+        <div class="row align-items-start p-2">
+            <div class="form-group row">
+                <label for="nombres" class="col-sm-2 col-form-label text-right">Nombre(s):</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="nombres" placeholder="Ingresa tu nombre" required>
+                </div>
+
+                <label for="apellidos" class="col-sm-2 col-form-label">Apellidos:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="apellidos" placeholder="Ingresa tu nombre" required>
                 </div>
             </div>
         </div>
 
-        <div class="field">
-            <label class="label">Nombre(s)</label>
-            <div class="control">
-                <input name="nombre" class="input" type="text" placeholder="Ingrese su nombre...">
-            </div>
-        </div>
-        <div class="field">
-            <label class="label">Apellidos</label>
-            <div class="control">
-                <input name="apellidos" class="input" type="text" placeholder="Ingrese sus apellidos...">
-            </div>
-        </div>
-        <div class="field">
-            <label class="label">Teléfono</label>
-            <div class="control">
-                <input name="telefono" class="input" type="number" placeholder="Ingrese su teléfono...">
-            </div>
-        </div>
+        <div class="row align-items-start p-2">
+            <div class="form-group row">
+                <label for="Usuario" class="col-sm-2 col-form-label text-right">Usuario:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="Usuario" placeholder="Ingresa tu usuario" required>
+                </div>
 
-        <div class="field">
-            <label class="label">Correo</label>
-            <div class="control">
-                <input name="correo" class="input" type="email" placeholder="Introduce tu correo...">
-            </div>
-        </div>
-
-        <div class="field">
-            <label class="label">Contraseña</label>
-            <div class="control">
-                <input name="password" class="input" type="password" placeholder="Introduce tu contraseña...">
-            </div>
-        </div>
-
-        <div class="field">
-            <label class="label">Tipo de usuario</label>
-            <div class="control">
-                <div class="select">
-                    <select name="tipo_usuario">
-                        <option value="admin">Admin</option>
-                        <option value="empleado">Empleado</option>
-                        <option value="mantenimiento">Mantenimiento</option>
-                        <option value="lectura">Solo Lectura</option>
-                    </select>
+                <label for="Correo Electrónico" class="col-sm-2 col-form-label">Correo electrónico:</label>
+                <div class="col-sm-4">
+                    <input type="email" class="form-control" id="Correo Electrónico" placeholder="Ingresa tu nombre" required>
                 </div>
             </div>
         </div>
 
-        <div class="field" hidden>
-            <label class="label">Estado</label>
-            <div class="control">
-                <input name="estado" class="input" type="number" value="1" min="0" max="1">
+        <div class="row align-items-start p-2">
+            <div class="form-group row">
+                <label for="contrasena" class="col-sm-2 col-form-label text-right">Contraseña:</label>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="contrasena" placeholder="Ingresa tu Contraseña" required>
+                </div>
+
+                <label for="ConfirmacionContrasena" class="col-sm-2 col-form-label">Confirmación de contraseña:</label>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="ConfirmacionContrasena" placeholder="Confirmación de contraseña" required>
+                </div>
             </div>
         </div>
 
+        
+        <button type="submit" class="btn btn-warning navbar-color-personalizado text-white">Registrarse</button>
 
-        <div class="field is-grouped">
-            <div class="control">
-                <button type="submit" class="button is-warning">Crear Usuario</button>
-            </div>
-            <div class="control">
-                <button class="button is-link is-light">Cancel</button>
-            </div>
-        </div>
+    </div>
 
-    </article>
+
+
+
 @endsection

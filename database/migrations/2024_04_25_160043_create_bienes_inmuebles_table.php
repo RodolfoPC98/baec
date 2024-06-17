@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('bienes_inmuebles', function (Blueprint $table) {
             $table->id();
             $table->string('calle', 45);
-            $table->integer('numero');
+            $table->integer('numero')->nullable();
             $table->string('colonia', 45);
             $table->string('localidad', 45);
             $table->string('entidad_federativa', 45);
-            $table->double('telefono');
+            $table->string('telefono', 45)->nullable();
             $table->string('predio', 45);
             $table->string('edificio', 45);
             $table->string('unidad_administrativa', 45);

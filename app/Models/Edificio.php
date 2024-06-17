@@ -9,8 +9,10 @@ class Edificio extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     // Relacion uno a muchos
-    public function ubicacions(){
-        return $this->hasMany('App\Models\Ubicacion');
+    public function ubicacion(){
+        return $this->hasMany(ubicacion::class);
     }
 }

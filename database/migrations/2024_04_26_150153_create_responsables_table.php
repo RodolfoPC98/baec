@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('nombre', 45);
             $table->string('apellidos', 45);
-            $table->double('telefono')->nullable();
+            $table->string('telefono', 45)->nullable();
             $table->string('correo', 45)->nullable();
             
-            $table->unsignedBigInteger('ubicacion_id')->nullable();
+            // $table->unsignedBigInteger('ubicacion_id')->nullable();
 
-            $table->foreign('ubicacion_id')->references('id')->on('ubicacions')->onDelete('set null');
+            // $table->foreign('ubicacion_id')->references('id')->on('ubicacions')->onDelete('set null');
             
             $table->timestamps();
         });

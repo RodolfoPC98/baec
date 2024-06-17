@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Estado extends Model
 {
     use HasFactory;
+    
+    protected $guarded = [];
 
-    // Relacion uno a muchos
-    public function biens(){
-        return $this->hasMany('App\Models\Bien');
+    // // Relacion uno a muchos
+    public function bien(){
+        return $this->hasMany(bien::class);
     }
 }

@@ -9,13 +9,19 @@ class Responsable extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     // Relacion uno a muchos (inversa)
-    public function ubicacions(){
-        return $this->belongsTo('App\Models\Ubicacion');
+    public function ubicacion(){
+        return $this->belongsTo(ubicacion::class);
     }
 
     // Relacion uno a muchos
-    public function biens(){
-        return $this->hasMany('App\Models\Bien');
+    public function bien_responsable(){
+        return $this->hasMany(bien::class, 'responsable_id');
+    }
+
+    public function bien_resguardatorio(){
+        return $this->hasMany(bien::class, 'resguardatorio_id');
     }
 }

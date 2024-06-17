@@ -9,18 +9,20 @@ class Ubicacion extends Model
 {
     use HasFactory;
 
-    // Relacion uno a muchos (inversa)
-    public function edificios(){
-        return $this->belongsTo('App\Models\Edificio');
-    }
+    protected $guarded = [];
+
+    // // Relacion uno a muchos (inversa)
+    // public function edificios(){
+    //     return $this->belongsTo('App\Models\Edificio');
+    // }
+
+    // // Relacion uno a muchos
+    // public function responsables(){
+    //     return $this->hasMany('App\Models\Responsable');
+    // }
 
     // Relacion uno a muchos
-    public function responsables(){
-        return $this->hasMany('App\Models\Responsable');
-    }
-
-    // Relacion uno a muchos
-    public function biens(){
-        return $this->hasMany('App\Models\Bien');
+    public function bien(){
+        return $this->hasMany(bien::class);
     }
 }

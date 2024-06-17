@@ -9,8 +9,10 @@ class Descripcion_bien extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     // Relacion uno a muchos
-    public function biens(){
-        return $this->hasMany('App\Models\Bien');
+    public function bien(){
+        return $this->hasMany(bien::class);
     }
 }

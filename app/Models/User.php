@@ -14,6 +14,8 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $guarded = [];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -57,20 +59,20 @@ class User extends Authenticatable
     // }
 
     // Relacion uno a muchos
-    public function bienes_inmuebles()
+    public function bienes_inmueble()
     {
-        return $this->hasMany('App\Models\Bienes_inmueble');
+        return $this->hasMany(bienes_inmueble::class);
     }
 
     // Relacion uno a muchos
-    public function biens()
+    public function bien()
     {
-        return $this->hasMany('App\Models\Bien');
+        return $this->hasMany(bien::class);
     }
 
     // Relacion uno a muchos
-    public function minisplit_mural_mantenimientos()
+    public function minisplit_mural_mantenimiento()
     {
-        return $this->hasMany('App\Models\Minisplit_mural_mantenimiento');
+        return $this->hasMany(minisplit_mural_mantenimiento::class);
     }
 }

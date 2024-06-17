@@ -14,10 +14,6 @@ class UsuarioController extends Controller
         return view('usuarios.create');
     }
 
-    public function store(){
-        
-    }
-
     public function show($usuario){
         return view('usuarios.show', compact('usuario'));
     }

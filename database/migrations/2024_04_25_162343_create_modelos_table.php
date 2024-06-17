@@ -13,13 +13,15 @@ return new class extends Migration
     {
         Schema::create('modelos', function (Blueprint $table) {
             $table->id();
+            $table->string('marca', 45);
             $table->string('nombre', 45);
             $table->string('serie', 45);
-            $table->unsignedBigInteger('marca_id')->nullable();
+            
+            // $table->unsignedBigInteger('marca_id')->nullable();
 
-            $table->foreign('marca_id')
-                    ->references('id')->on('marcas')
-                    ->onDelete('set null');
+            // $table->foreign('marca_id')
+            //         ->references('id')->on('marcas')
+            //         ->onDelete('set null');
 
             $table->timestamps();
         });

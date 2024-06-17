@@ -9,8 +9,10 @@ class Trabajos_realizado extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     // Relacion uno a muchos
-    public function minisplit_mural_mantenimientos(){
-        return $this->hasMany('App\Models\Minisplit_mural_mantenimiento');
+    public function minisplit_mural_mantenimiento(){
+        return $this->hasMany(minisplit_mural_mantenimiento::class);
     }
 }

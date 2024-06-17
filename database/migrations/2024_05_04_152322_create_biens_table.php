@@ -19,20 +19,36 @@ return new class extends Migration
             $table->text('comentario')->nullable();
             $table->string('factura', 45)->nullable();
             $table->timestamp('fecha_factura')->nullable();
+            $table->string('estado', 45)->nullable();
 
             $table->unsignedBigInteger('proveedor_id')->nullable();
             $table->unsignedBigInteger('ubicacion_id')->nullable();
             $table->unsignedBigInteger('modelo_id')->nullable();
             $table->unsignedBigInteger('responsable_id')->nullable();
+            $table->unsignedBigInteger('resguardatorio_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('estado_id')->nullable();
             $table->unsignedBigInteger('tipo_bien_id')->nullable();
             $table->unsignedBigInteger('descripcion_bien_id')->nullable();
 
+            $table->timestamp('fecha_compra')->nullable();
+            $table->string('tipo_uso')->nullable(); // Personal o comunitario
+            $table->string('tipo')->nullable(); // Laptop, escritorio; laser, multifuncional, cartucho, toner
+            $table->string('so')->nullable();
+            $table->string('cpu')->nullable();
+            $table->string('capacidad')->nullable();
+            $table->string('memoria')->nullable();
+            $table->string('monitor')->nullable();
+            $table->string('teclado')->nullable();
+            $table->string('bocina')->nullable();
+            $table->string('audifono')->nullable();
+            $table->string('raton')->nullable();
+
             $table->foreign('proveedor_id')->references('id')->on('proveedors')->onDelete('set null');
             $table->foreign('ubicacion_id')->references('id')->on('ubicacions')->onDelete('set null');
             $table->foreign('modelo_id')->references('id')->on('modelos')->onDelete('set null');
             $table->foreign('responsable_id')->references('id')->on('responsables')->onDelete('set null');
+            $table->foreign('resguardatorio_id')->references('id')->on('responsables')->onDelete('set null');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
             $table->foreign('estado_id')->references('id')->on('estados')->onDelete('set null');
             $table->foreign('tipo_bien_id')->references('id')->on('tipo_biens')->onDelete('set null');

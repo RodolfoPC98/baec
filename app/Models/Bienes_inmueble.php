@@ -9,8 +9,10 @@ class Bienes_inmueble extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     // Relacion uno a muchos (inversa)
-    public function users(){
-        return $this->belongsTo('App\Models\User');
+    public function user(){
+        return $this->belongsTo(user::class);
     }
 }

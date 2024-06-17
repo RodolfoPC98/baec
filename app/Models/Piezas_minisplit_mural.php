@@ -9,8 +9,10 @@ class Piezas_minisplit_mural extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     // Relacion uno a muchos
-    public function cambios_piezas(){
-        return $this->hasMany('App\Models\Cambios_Pieza');
+    public function cambios_pieza(){
+        return $this->hasMany(cambios_pieza::class);
     }
 }

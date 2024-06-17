@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('ubicacions', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 45);
-            $table->unsignedBigInteger('edificio_id')->nullable();
+            $table->string('edificio', 45);
+            // $table->unsignedBigInteger('edificio_id')->nullable();
 
-            $table->foreign('edificio_id')->references('id')->on('edificios')->onDelete('set null');
+            // $table->foreign('edificio_id')->references('id')->on('edificios')->onDelete('set null');
             $table->timestamps();
         });
     }

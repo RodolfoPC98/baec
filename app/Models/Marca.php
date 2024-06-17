@@ -9,8 +9,6 @@ class Marca extends Model
 {
     use HasFactory;
 
-    // Relacion uno a muchos
-    public function modelos(){
-        return $this->hasMany('App\Models\Modelo');
-    }
+    protected $guarded = [];
+
 }
